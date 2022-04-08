@@ -4,9 +4,9 @@
 
 export interface RespuestaTMDB {
     page:          number;
-    results:       Pelicula[];
     total_pages:   number;
     total_results: number;
+    results:       Pelicula[];
 }
 
 export interface Pelicula {
