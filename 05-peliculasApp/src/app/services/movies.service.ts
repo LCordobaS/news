@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { RespuestaTMDB } from '../interfaces/interfaces';
+import { RespuestaTMDB, PeliculaDetalle, RespuestaCredits } from '../interfaces/interfaces';
 import { environment } from '../../environments/environment';
 
 
@@ -11,15 +11,22 @@ const apiKey = environment.apiKey;
 })
 export class MoviesService {
 
-  
+  private popularesPage = 0;
 
   constructor( private http: HttpClient) { }
-
+  
   private ejecutarQuery<T>(query: string){
     query = URL + query;
     query += `&api_key=${apiKey}&language=es&include_image_lenguage=es`
 
     return this.http.get<T>(query);
+  }
+
+  getPopulares(){
+    this.popularesPage++;
+
+    const query=`/discover/movie?sort_by=popularity.desc&page=${this.popularesPage}`;
+    return this.ejecutarQuery<RespuestaTMDB>(query);
   }
 
   getFeature(){
@@ -43,6 +50,14 @@ export class MoviesService {
     // tslint:disable-next-line:max-line-length
     return this.ejecutarQuery<RespuestaTMDB>(`/discover/movie?primary_release_date.gte=${ inicio }&primary_release_date.lte=${ fin }`);
 
+  }
+
+  getPeliculaDetalles(id: string){
+    return this.ejecutarQuery<PeliculaDetalle>(`/movie/${id}?a=1`);
+  }
+
+  getPeliculaActores(id: string){
+    return this.ejecutarQuery<RespuestaCredits>(`/movie/${id}/credits?a=1`);
   }
 }
 
