@@ -41,4 +41,8 @@ slideOptsActores = {
     this.modalCtrl.dismiss();
   }
 
+  favorito(){
+    
+  }
+
 }
