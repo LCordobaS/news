@@ -14,7 +14,8 @@ import { FiltroImagenPipe } from './filtro-imagen.pipe';
   ],
   exports: [
     ImagenPipe,
-    ParesPipe
+    ParesPipe,
+    FiltroImagenPipe
   ],
   imports: [
     CommonModule

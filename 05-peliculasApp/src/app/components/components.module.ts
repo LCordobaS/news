@@ -9,13 +9,14 @@ import { DetalleComponent } from './detalle/detalle.component';
 
 @NgModule({
   entryComponents: [
-    DetalleComponent
+    DetalleComponent, PipesModule
   ],
   declarations: [
     SlideshowBackdropComponent,
     SlideshowPosterComponent,
     SlideshowParesComponent,
-    DetalleComponent
+    DetalleComponent,
+    
   ],
   exports: [
     SlideshowBackdropComponent,
