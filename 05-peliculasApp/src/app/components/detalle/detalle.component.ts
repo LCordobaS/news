@@ -18,7 +18,7 @@ actores: Cast[] = [];
 oculto = 150;
 estrella = 'star-outline';
 
-private dataLocalService: DataLocalService;
+private _dataLocal: DataLocalService;
 
 slideOptsActores = {
  slidesPerView: 3.3,
@@ -48,7 +48,8 @@ slideOptsActores = {
   }
 
   favorito(){
-    const existe = this.dataLocalService.guardarPelicula( this.pelicula );
+    //const existe = this.dataLocal.guardarPelicula( this.pelicula );
+    const existe = this._dataLocal.guardarPelicula(this.pelicula)
     this.estrella = ( existe ) ? 'star' : 'star-outline';
   }
 

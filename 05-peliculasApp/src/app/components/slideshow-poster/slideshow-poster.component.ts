@@ -11,8 +11,8 @@ import { DetalleComponent } from '../detalle/detalle.component';
 export class SlideshowPosterComponent implements OnInit {
   @Input() peliculas: Pelicula[]=[];
   slideOpts = {
-    slidesPerView: 2.3,
-    spaceBetween: -60,
+    slidesPerView: 2.5,
+    spaceBetween: -15,
     freeMode: true
   };
   constructor( private modalCtrl: ModalController ) { }

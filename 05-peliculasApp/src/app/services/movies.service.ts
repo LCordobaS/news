@@ -69,11 +69,11 @@ export class MoviesService {
   }
 
 
-  getPeliculaDetalle( id: string ) {
+  getPeliculaDetalle( id: number ) {
     return this.ejecutarQuery<PeliculaDetalle>(`/movie/${ id }?a=1`);
   }
 
-  getPeliculaActores( id: string ) {
+  getPeliculaActores( id: number ) {
     return this.ejecutarQuery<RespuestaCredits>(`/movie/${ id }/credits?a=1`);
   }
 

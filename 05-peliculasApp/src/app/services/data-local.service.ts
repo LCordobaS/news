@@ -57,8 +57,9 @@ export class DataLocalService {
 
     const peliculas = await this.storage.get('peliculas');
     this.peliculas = peliculas || [];
+    
     return this.peliculas;
-    console.log(DataLocalService)
+    
   }
 
   async existePelicula( id ) {

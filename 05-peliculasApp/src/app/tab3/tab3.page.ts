@@ -12,10 +12,10 @@ export class Tab3Page {
 
   peliculas: PeliculaDetalle[] = [];
   generos: Genre[] = [];
-
   favoritoGenero: any[] = [];
+  private dataLocal: DataLocalService;
 
-  constructor( private dataLocal: DataLocalService,
+  constructor( 
                private moviesService: MoviesService  ) { }
 
 
